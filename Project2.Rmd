@@ -1,0 +1,23 @@
+---
+title: "Project2"
+author: "Brady Losiewicz"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data
+
+```{r}
+df <- readRDS('FSB_BI_Survey_2019_2021.rds')
+head(df)
+```
+
+```{r}
+new_df <- subset(df, select = c(32:38))
+new_df$survey_salary = df$survey_salary
+```
+
