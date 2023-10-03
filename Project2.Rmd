@@ -20,5 +20,6 @@ head(df)
 new_df <- subset(df, select = c(32:38))
 new_df$survey_salary = df$survey_salary
 head(new_df)
+str(new_df)
 ```
 
