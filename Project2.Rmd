@@ -1,25 +1,48 @@
 ---
-title: "Project2"
-author: "Brady Losiewicz"
-date: "`r Sys.Date()`"
-output: html_document
+title: "Student Success"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+author: "Madison Jones and Brady Losiewicz"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: true
+    code-tools: true 
+    code-fold: true
+    code-overflow: scroll
+    self-contained: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Data
+## Inserting Data
 
 ```{r}
 df <- readRDS('FSB_BI_Survey_2019_2021.rds')
 head(df)
 ```
 
+
+## Creating a Clean Subset
+
 ```{r}
 new_df <- subset(df, select = c(32:38))
 new_df$survey_salary = df$survey_salary
 head(new_df)
 str(new_df)
+```
+
+Adding a column that has a 1 or 0 for "accepted fulltime job"
+```{r}
+new_df$fulltimejob <- ifelse(is.na(new_df$survey_plans == "accepted fulltime job", 1, 0))
+head(new_df)
+```
+
+Turning survey_plans column into a factored column
+```{r}
+new_df$survey_plans_fact = as.factor(new_df$survey_plans)le
+new_df$survey_plans_fact
 ```
 
