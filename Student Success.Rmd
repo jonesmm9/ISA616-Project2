@@ -1,0 +1,9 @@
+---
+title: "Student Success Project"
+output: html_document
+date: "2023-10-01"
+---
+
+## **Business Value Proposition**
+
+![](images/poster Value proposition canvas simple white.png)
