@@ -27,6 +27,9 @@ head(df)
 
 ## Creating a Clean Subset
 
+### Cleaning the Full-Time Placements
+
+**Omitting colummns that are not helpful to data insights charge number #3 (internships to full time placements)**
 ```{r}
 new_df <- subset(df, select = c(32:38))
 new_df$survey_salary = df$survey_salary
@@ -34,15 +37,49 @@ head(new_df)
 str(new_df)
 ```
 
-Adding a column that has a 1 or 0 for "accepted fulltime job"
+**Turning survey_plans column into a factored column**
 ```{r}
-new_df$fulltimejob <- ifelse(is.na(new_df$survey_plans == "accepted fulltime job", 1, 0))
+new_df$survey_plans = as.factor(new_df$survey_plans)
+```
+
+**Omitting all null values for survey_plans:**
+```{r}
+new_df <- new_df[!is.na(new_df$survey_plans), ]
+head(new_df)
+str(new_df$survey_plans)
+```
+
+**Making a column that has a "1" if the candidate has accepted a fulltime job OR they have at least 1 offer, otherwise "0":**
+```{r}
+new_df$fulltimejob <- ifelse((new_df$survey_offers >= 1 & !is.na(new_df$survey_offers) ) | new_df$survey_plans == "accepted fulltime job", 1, 0)
+head(new_df, 10)
+```
+
+**Rationale for the "fulltimejob" column:**
+
+We wanted to count full-time job placement as anyone who has done one of the following:
+* said that they "accepted a fulltime job" as their survey plan
+* put that they got at least 1 offer in their survey
+
+We decided to add the second criteria bullet to full-time job placements because even if someone is, for example, "continuing their education" in the future, if they got at least 1 offer, they could have had a full time job. Since we are solely looking at full-time job placements, we wanted to look at everyone who has a full-time job or could've chosen to take a full-time job if they had at least one offer. 
+
+
+### Cleaning the Internship Placements
+
+We want to easily see how many internships each candidate has. 
+
+Making four different columns that show "1" if the candidate has one, two, three, or four internships:
+```{r}
+new_df$internships_one <- ifelse(!is.na(new_df$survey_internone), 1, 0)
+new_df$internships_two <- ifelse(!is.na(new_df$survey_interntwo), 1, 0)
+new_df$internships_three <- ifelse(!is.na(new_df$survey_internthree), 1, 0)
+new_df$internships_four <- ifelse(!is.na(new_df$survey_internfour), 1, 0)
 head(new_df)
 ```
 
-Turning survey_plans column into a factored column
+Adding another column that sums the amount of internships:
 ```{r}
-new_df$survey_plans_fact = as.factor(new_df$survey_plans)le
-new_df$survey_plans_fact
+
 ```
+
 
