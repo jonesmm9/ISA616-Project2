@@ -3094,93 +3094,53 @@ vertical-align: -.125em;
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;FSB_BI_Survey_2019_2021.rds&#39;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  nmajor    major1 major2 BBRJ Business Direct Admit Combined Bacc and Masters
 1      1 Marketing   none    0                     1                         0
 2      1   Finance   none    0                     1                         0
 3      1 Marketing   none    0                     1                         0
-4      1   Finance   none    0                     1                         0
-5      1 Marketing   none    0                     1                         0
-6      1 Marketing   none    0                     1                         0
   Dean&#39;s List First Generation College Stdnt FSB Scholars Honors Program
 1           0                              0            0              0
 2           0                              0            0              0
 3           1                              0            0              0
-4           0                              1            0              0
-5           1                              0            0              0
-6           0                              0            0              0
   President&#39;s List Study Abroad Courtesy Account Transfer Work (Pre-Banner)
 1                0                             0                          0
 2                0                             0                          0
 3                0                             0                          0
-4                0                             0                          0
-5                0                             0                          0
-6                0                             0                          1
   Cum Laude Magna Cum Laude Summa Cum Laude University Honors
 1         0               0               0                 0
 2         0               0               0                 0
 3         1               0               0                 0
-4         0               0               0                 0
-5         0               0               0                 0
-6         0               0               0                 0
-  UniversityHonors w/Distinction                  minor1
-1                              0                No Minor
-2                              0  Business Legal Studies
-3                              0              Humanities
-4                              0             Accountancy
-5                              0 Supply Chain Management
-6                              0              Humanities
-                   minor2 IPEDS.Race.Ethnicity Gender   GPA.Range Term.Code
-1                No Minor      Hispanic/Latino   Male 2.00 - 2.49    202015
-2                No Minor                White   Male 3.00 - 3.49    201920
-3              Humanities                Asian Female 3.50 - 4.00    202120
-4             Accountancy                White   Male 3.00 - 3.49    202020
-5 Supply Chain Management                White   Male 3.00 - 3.49    201920
-6              Humanities                White Female 3.00 - 3.49    202020
-  year.x latin_honors survey_city      survey_company
-1   2020            0        &lt;NA&gt;                &lt;NA&gt;
-2   2019            0      Toledo          BAM Nutual
-3   2021            0    Columbus             CoHatch
-4   2020            0        &lt;NA&gt;                 PwC
-5   2019            0    Columbus Abercrombie &amp; Fitch
-6   2020            0   Cleveland          McDonald&#39;s
-                                        survey_deptfunc survey_gradprogram
-1                                                  &lt;NA&gt;               &lt;NA&gt;
-2                                               Finance               &lt;NA&gt;
-3                                    General Management               &lt;NA&gt;
-4                                                  &lt;NA&gt;               &lt;NA&gt;
-5                                    General Management               &lt;NA&gt;
-6 Consulting Marketing / Sales Operations / Procurement               &lt;NA&gt;
-  survey_gradschool survey_internfour          survey_internone
-1              &lt;NA&gt;              &lt;NA&gt;                      &lt;NA&gt;
-2              &lt;NA&gt;              &lt;NA&gt;                      &lt;NA&gt;
-3              &lt;NA&gt;              &lt;NA&gt;      Second Time Founders
-4              &lt;NA&gt;              &lt;NA&gt;              Bauer Hockey
-5              &lt;NA&gt;              &lt;NA&gt;         Nouveau Vie, LLC.
-6              &lt;NA&gt; Victoria&#39;s Secret CNN / Turner Broadcasting
-  survey_internships                  survey_internthree    survey_interntwo
-1               &lt;NA&gt;                                &lt;NA&gt;                &lt;NA&gt;
-2                  0                                &lt;NA&gt;                &lt;NA&gt;
-3                  2                                &lt;NA&gt;            La Soupe
-4                  2                                &lt;NA&gt;          IHS Markit
-5                  2                                &lt;NA&gt; Abercrombie &amp; Fitch
-6                  4 Oxford Medical Aesthetics and Laser              Hylant
-  survey_offers                 survey_plans survey_pref_field survey_pref_loc
-1          &lt;NA&gt; seeking continuing education              &lt;NA&gt;            &lt;NA&gt;
-2             0        accepted fulltime job               Yes             Yes
-3             1        accepted fulltime job               Yes             Yes
-4          &lt;NA&gt;        accepted fulltime job              &lt;NA&gt;            &lt;NA&gt;
-5             1        accepted fulltime job               Yes             Yes
-6             4        accepted fulltime job               Yes             Yes
-  survey_salary survey_state
-1            NA         &lt;NA&gt;
-2            NA         Ohio
-3         40000           OH
-4            NA         &lt;NA&gt;
-5         63500         Ohio
-6         68000           OH</code></pre>
+  UniversityHonors w/Distinction                 minor1     minor2
+1                              0               No Minor   No Minor
+2                              0 Business Legal Studies   No Minor
+3                              0             Humanities Humanities
+  IPEDS.Race.Ethnicity Gender   GPA.Range Term.Code year.x latin_honors
+1      Hispanic/Latino   Male 2.00 - 2.49    202015   2020            0
+2                White   Male 3.00 - 3.49    201920   2019            0
+3                Asian Female 3.50 - 4.00    202120   2021            0
+  survey_city survey_company    survey_deptfunc survey_gradprogram
+1        &lt;NA&gt;           &lt;NA&gt;               &lt;NA&gt;               &lt;NA&gt;
+2      Toledo     BAM Nutual            Finance               &lt;NA&gt;
+3    Columbus        CoHatch General Management               &lt;NA&gt;
+  survey_gradschool survey_internfour     survey_internone survey_internships
+1              &lt;NA&gt;              &lt;NA&gt;                 &lt;NA&gt;               &lt;NA&gt;
+2              &lt;NA&gt;              &lt;NA&gt;                 &lt;NA&gt;                  0
+3              &lt;NA&gt;              &lt;NA&gt; Second Time Founders                  2
+  survey_internthree survey_interntwo survey_offers
+1               &lt;NA&gt;             &lt;NA&gt;          &lt;NA&gt;
+2               &lt;NA&gt;             &lt;NA&gt;             0
+3               &lt;NA&gt;         La Soupe             1
+                  survey_plans survey_pref_field survey_pref_loc survey_salary
+1 seeking continuing education              &lt;NA&gt;            &lt;NA&gt;            NA
+2        accepted fulltime job               Yes             Yes            NA
+3        accepted fulltime job               Yes             Yes         40000
+  survey_state
+1         &lt;NA&gt;
+2         Ohio
+3           OH</code></pre>
 </div>
 </div>
 </section>
@@ -3192,30 +3152,17 @@ vertical-align: -.125em;
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, <span class="at">select =</span> <span class="fu">c</span>(<span class="dv">32</span><span class="sc">:</span><span class="dv">38</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>survey_salary <span class="ot">=</span> df<span class="sc">$</span>survey_salary</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>  survey_internfour          survey_internone survey_internships
-1              &lt;NA&gt;                      &lt;NA&gt;               &lt;NA&gt;
-2              &lt;NA&gt;                      &lt;NA&gt;                  0
-3              &lt;NA&gt;      Second Time Founders                  2
-4              &lt;NA&gt;              Bauer Hockey                  2
-5              &lt;NA&gt;         Nouveau Vie, LLC.                  2
-6 Victoria&#39;s Secret CNN / Turner Broadcasting                  4
-                   survey_internthree    survey_interntwo survey_offers
-1                                &lt;NA&gt;                &lt;NA&gt;          &lt;NA&gt;
-2                                &lt;NA&gt;                &lt;NA&gt;             0
-3                                &lt;NA&gt;            La Soupe             1
-4                                &lt;NA&gt;          IHS Markit          &lt;NA&gt;
-5                                &lt;NA&gt; Abercrombie &amp; Fitch             1
-6 Oxford Medical Aesthetics and Laser              Hylant             4
-                  survey_plans survey_salary
-1 seeking continuing education            NA
-2        accepted fulltime job            NA
-3        accepted fulltime job         40000
-4        accepted fulltime job            NA
-5        accepted fulltime job         63500
-6        accepted fulltime job         68000</code></pre>
+<pre><code>  survey_internfour     survey_internone survey_internships survey_internthree
+1              &lt;NA&gt;                 &lt;NA&gt;               &lt;NA&gt;               &lt;NA&gt;
+2              &lt;NA&gt;                 &lt;NA&gt;                  0               &lt;NA&gt;
+3              &lt;NA&gt; Second Time Founders                  2               &lt;NA&gt;
+  survey_interntwo survey_offers                 survey_plans survey_salary
+1             &lt;NA&gt;          &lt;NA&gt; seeking continuing education            NA
+2             &lt;NA&gt;             0        accepted fulltime job            NA
+3         La Soupe             1        accepted fulltime job         40000</code></pre>
 </div>
 <details>
 <summary>Code</summary>
@@ -3245,30 +3192,17 @@ vertical-align: -.125em;
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> new_df[<span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_plans), ]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>  survey_internfour          survey_internone survey_internships
-1              &lt;NA&gt;                      &lt;NA&gt;               &lt;NA&gt;
-2              &lt;NA&gt;                      &lt;NA&gt;                  0
-3              &lt;NA&gt;      Second Time Founders                  2
-4              &lt;NA&gt;              Bauer Hockey                  2
-5              &lt;NA&gt;         Nouveau Vie, LLC.                  2
-6 Victoria&#39;s Secret CNN / Turner Broadcasting                  4
-                   survey_internthree    survey_interntwo survey_offers
-1                                &lt;NA&gt;                &lt;NA&gt;          &lt;NA&gt;
-2                                &lt;NA&gt;                &lt;NA&gt;             0
-3                                &lt;NA&gt;            La Soupe             1
-4                                &lt;NA&gt;          IHS Markit          &lt;NA&gt;
-5                                &lt;NA&gt; Abercrombie &amp; Fitch             1
-6 Oxford Medical Aesthetics and Laser              Hylant             4
-                  survey_plans survey_salary
-1 seeking continuing education            NA
-2        accepted fulltime job            NA
-3        accepted fulltime job         40000
-4        accepted fulltime job            NA
-5        accepted fulltime job         63500
-6        accepted fulltime job         68000</code></pre>
+<pre><code>  survey_internfour     survey_internone survey_internships survey_internthree
+1              &lt;NA&gt;                 &lt;NA&gt;               &lt;NA&gt;               &lt;NA&gt;
+2              &lt;NA&gt;                 &lt;NA&gt;                  0               &lt;NA&gt;
+3              &lt;NA&gt; Second Time Founders                  2               &lt;NA&gt;
+  survey_interntwo survey_offers                 survey_plans survey_salary
+1             &lt;NA&gt;          &lt;NA&gt; seeking continuing education            NA
+2             &lt;NA&gt;             0        accepted fulltime job            NA
+3         La Soupe             1        accepted fulltime job         40000</code></pre>
 </div>
 <details>
 <summary>Code</summary>
@@ -3283,42 +3217,21 @@ vertical-align: -.125em;
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>fulltimejob <span class="ot">&lt;-</span> <span class="fu">ifelse</span>((new_df<span class="sc">$</span>survey_offers <span class="sc">&gt;=</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_offers) ) <span class="sc">|</span> new_df<span class="sc">$</span>survey_plans <span class="sc">==</span> <span class="st">&quot;accepted fulltime job&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>   survey_internfour              survey_internone survey_internships
-1               &lt;NA&gt;                          &lt;NA&gt;               &lt;NA&gt;
-2               &lt;NA&gt;                          &lt;NA&gt;                  0
-3               &lt;NA&gt;          Second Time Founders                  2
-4               &lt;NA&gt;                  Bauer Hockey                  2
-5               &lt;NA&gt;             Nouveau Vie, LLC.                  2
-6  Victoria&#39;s Secret     CNN / Turner Broadcasting                  4
-7               &lt;NA&gt;                   T. Marzetti                  3
-9               &lt;NA&gt; TravelCenters of America (TA)                  3
-11              &lt;NA&gt;                          &lt;NA&gt;               &lt;NA&gt;
-12              &lt;NA&gt;  Textron Specialized Vehicles                  1
-                    survey_internthree              survey_interntwo
-1                                 &lt;NA&gt;                          &lt;NA&gt;
-2                                 &lt;NA&gt;                          &lt;NA&gt;
-3                                 &lt;NA&gt;                      La Soupe
-4                                 &lt;NA&gt;                    IHS Markit
-5                                 &lt;NA&gt;           Abercrombie &amp; Fitch
-6  Oxford Medical Aesthetics and Laser                        Hylant
-7                        Ernst &amp; Young            Whitehorn Partners
-9                 Ernst and Young (EY) TravelCenters of America (TA)
-11                                &lt;NA&gt;                          &lt;NA&gt;
-12                                &lt;NA&gt;                          &lt;NA&gt;
-   survey_offers                 survey_plans survey_salary fulltimejob
-1           &lt;NA&gt; seeking continuing education            NA           0
-2              0        accepted fulltime job            NA           1
-3              1        accepted fulltime job         40000           1
-4           &lt;NA&gt;        accepted fulltime job            NA           1
-5              1        accepted fulltime job         63500           1
-6              4        accepted fulltime job         68000           1
-7              1        accepted fulltime job         58000           1
-9              1        accepted fulltime job         53000           1
-11          &lt;NA&gt;        accepted fulltime job         85000           1
-12             1        accepted fulltime job         58000           1</code></pre>
+<pre><code>  survey_internfour     survey_internone survey_internships survey_internthree
+1              &lt;NA&gt;                 &lt;NA&gt;               &lt;NA&gt;               &lt;NA&gt;
+2              &lt;NA&gt;                 &lt;NA&gt;                  0               &lt;NA&gt;
+3              &lt;NA&gt; Second Time Founders                  2               &lt;NA&gt;
+  survey_interntwo survey_offers                 survey_plans survey_salary
+1             &lt;NA&gt;          &lt;NA&gt; seeking continuing education            NA
+2             &lt;NA&gt;             0        accepted fulltime job            NA
+3         La Soupe             1        accepted fulltime job         40000
+  fulltimejob
+1           0
+2           1
+3           1</code></pre>
 </div>
 </div>
 <p><strong>Rationale for the “fulltimejob” column:</strong></p>
@@ -3336,37 +3249,25 @@ vertical-align: -.125em;
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>internships_two <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_interntwo), <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>internships_three <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_internthree), <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>internships_four <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_internfour), <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>  survey_internfour          survey_internone survey_internships
-1              &lt;NA&gt;                      &lt;NA&gt;               &lt;NA&gt;
-2              &lt;NA&gt;                      &lt;NA&gt;                  0
-3              &lt;NA&gt;      Second Time Founders                  2
-4              &lt;NA&gt;              Bauer Hockey                  2
-5              &lt;NA&gt;         Nouveau Vie, LLC.                  2
-6 Victoria&#39;s Secret CNN / Turner Broadcasting                  4
-                   survey_internthree    survey_interntwo survey_offers
-1                                &lt;NA&gt;                &lt;NA&gt;          &lt;NA&gt;
-2                                &lt;NA&gt;                &lt;NA&gt;             0
-3                                &lt;NA&gt;            La Soupe             1
-4                                &lt;NA&gt;          IHS Markit          &lt;NA&gt;
-5                                &lt;NA&gt; Abercrombie &amp; Fitch             1
-6 Oxford Medical Aesthetics and Laser              Hylant             4
-                  survey_plans survey_salary fulltimejob internships_one
-1 seeking continuing education            NA           0               0
-2        accepted fulltime job            NA           1               0
-3        accepted fulltime job         40000           1               1
-4        accepted fulltime job            NA           1               1
-5        accepted fulltime job         63500           1               1
-6        accepted fulltime job         68000           1               1
-  internships_two internships_three internships_four
-1               0                 0                0
-2               0                 0                0
-3               1                 0                0
-4               1                 0                0
-5               1                 0                0
-6               1                 1                1</code></pre>
+<pre><code>  survey_internfour     survey_internone survey_internships survey_internthree
+1              &lt;NA&gt;                 &lt;NA&gt;               &lt;NA&gt;               &lt;NA&gt;
+2              &lt;NA&gt;                 &lt;NA&gt;                  0               &lt;NA&gt;
+3              &lt;NA&gt; Second Time Founders                  2               &lt;NA&gt;
+  survey_interntwo survey_offers                 survey_plans survey_salary
+1             &lt;NA&gt;          &lt;NA&gt; seeking continuing education            NA
+2             &lt;NA&gt;             0        accepted fulltime job            NA
+3         La Soupe             1        accepted fulltime job         40000
+  fulltimejob internships_one internships_two internships_three
+1           0               0               0                 0
+2           1               0               0                 0
+3           1               1               1                 0
+  internships_four
+1                0
+2                0
+3                0</code></pre>
 </div>
 </div>
 <p>Adding another column that sums the amount of internships:</p>
@@ -3374,37 +3275,25 @@ vertical-align: -.125em;
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>num_internships <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(new_df[, <span class="fu">c</span>(<span class="st">&quot;internships_one&quot;</span>, <span class="st">&quot;internships_two&quot;</span>, <span class="st">&quot;internships_three&quot;</span>, <span class="st">&quot;internships_four&quot;</span>)])</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>  survey_internfour          survey_internone survey_internships
-1              &lt;NA&gt;                      &lt;NA&gt;               &lt;NA&gt;
-2              &lt;NA&gt;                      &lt;NA&gt;                  0
-3              &lt;NA&gt;      Second Time Founders                  2
-4              &lt;NA&gt;              Bauer Hockey                  2
-5              &lt;NA&gt;         Nouveau Vie, LLC.                  2
-6 Victoria&#39;s Secret CNN / Turner Broadcasting                  4
-                   survey_internthree    survey_interntwo survey_offers
-1                                &lt;NA&gt;                &lt;NA&gt;          &lt;NA&gt;
-2                                &lt;NA&gt;                &lt;NA&gt;             0
-3                                &lt;NA&gt;            La Soupe             1
-4                                &lt;NA&gt;          IHS Markit          &lt;NA&gt;
-5                                &lt;NA&gt; Abercrombie &amp; Fitch             1
-6 Oxford Medical Aesthetics and Laser              Hylant             4
-                  survey_plans survey_salary fulltimejob internships_one
-1 seeking continuing education            NA           0               0
-2        accepted fulltime job            NA           1               0
-3        accepted fulltime job         40000           1               1
-4        accepted fulltime job            NA           1               1
-5        accepted fulltime job         63500           1               1
-6        accepted fulltime job         68000           1               1
-  internships_two internships_three internships_four num_internships
-1               0                 0                0               0
-2               0                 0                0               0
-3               1                 0                0               2
-4               1                 0                0               2
-5               1                 0                0               2
-6               1                 1                1               4</code></pre>
+<pre><code>  survey_internfour     survey_internone survey_internships survey_internthree
+1              &lt;NA&gt;                 &lt;NA&gt;               &lt;NA&gt;               &lt;NA&gt;
+2              &lt;NA&gt;                 &lt;NA&gt;                  0               &lt;NA&gt;
+3              &lt;NA&gt; Second Time Founders                  2               &lt;NA&gt;
+  survey_interntwo survey_offers                 survey_plans survey_salary
+1             &lt;NA&gt;          &lt;NA&gt; seeking continuing education            NA
+2             &lt;NA&gt;             0        accepted fulltime job            NA
+3         La Soupe             1        accepted fulltime job         40000
+  fulltimejob internships_one internships_two internships_three
+1           0               0               0                 0
+2           1               0               0                 0
+3           1               1               1                 0
+  internships_four num_internships
+1                0               0
+2                0               0
+3                0               2</code></pre>
 </div>
 </div>
 <p>Creating a subset of the data to get rid of the unnecessary columns:</p>
@@ -3412,23 +3301,17 @@ vertical-align: -.125em;
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>final_df <span class="ot">&lt;-</span> <span class="fu">subset</span>(new_df, <span class="at">select =</span> <span class="fu">c</span>(survey_offers, survey_plans, survey_salary, fulltimejob, num_internships))</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(final_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(final_df, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  survey_offers                 survey_plans survey_salary fulltimejob
 1          &lt;NA&gt; seeking continuing education            NA           0
 2             0        accepted fulltime job            NA           1
 3             1        accepted fulltime job         40000           1
-4          &lt;NA&gt;        accepted fulltime job            NA           1
-5             1        accepted fulltime job         63500           1
-6             4        accepted fulltime job         68000           1
   num_internships
 1               0
 2               0
-3               2
-4               2
-5               2
-6               4</code></pre>
+3               2</code></pre>
 </div>
 </div>
 <!-- -->
@@ -3757,7 +3640,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;FSB_BI_Survey_2019_2021.rds&#39;</span>)</span>
-<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df, <span class="dv">3</span>)</span>
 <span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cleaning the Full-Time Placements</span></span>
@@ -3767,7 +3650,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, <span class="at">select =</span> <span class="fu">c</span>(<span class="dv">32</span><span class="sc">:</span><span class="dv">38</span>))</span>
 <span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>survey_salary <span class="ot">=</span> df<span class="sc">$</span>survey_salary</span>
-<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df)</span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span>
 <span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(new_df)</span>
 <span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a></span>
@@ -3781,7 +3664,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-66"><a href="#cb20-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb20-67"><a href="#cb20-67" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> new_df[<span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_plans), ]</span>
-<span id="cb20-68"><a href="#cb20-68" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df)</span>
+<span id="cb20-68"><a href="#cb20-68" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span>
 <span id="cb20-69"><a href="#cb20-69" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(new_df<span class="sc">$</span>survey_plans)</span>
 <span id="cb20-70"><a href="#cb20-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-71"><a href="#cb20-71" aria-hidden="true" tabindex="-1"></a></span>
@@ -3789,7 +3672,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb20-73"><a href="#cb20-73" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-76"><a href="#cb20-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb20-77"><a href="#cb20-77" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>fulltimejob <span class="ot">&lt;-</span> <span class="fu">ifelse</span>((new_df<span class="sc">$</span>survey_offers <span class="sc">&gt;=</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_offers) ) <span class="sc">|</span> new_df<span class="sc">$</span>survey_plans <span class="sc">==</span> <span class="st">&quot;accepted fulltime job&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb20-78"><a href="#cb20-78" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">10</span>)</span>
+<span id="cb20-78"><a href="#cb20-78" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span>
 <span id="cb20-79"><a href="#cb20-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-80"><a href="#cb20-80" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-81"><a href="#cb20-81" aria-hidden="true" tabindex="-1"></a>**Rationale for the &quot;fulltimejob&quot; column:**</span>
@@ -3809,21 +3692,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb20-97"><a href="#cb20-97" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>internships_two <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_interntwo), <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb20-98"><a href="#cb20-98" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>internships_three <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_internthree), <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb20-99"><a href="#cb20-99" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>internships_four <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(new_df<span class="sc">$</span>survey_internfour), <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb20-100"><a href="#cb20-100" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df)</span>
+<span id="cb20-100"><a href="#cb20-100" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span>
 <span id="cb20-101"><a href="#cb20-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-102"><a href="#cb20-102" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-103"><a href="#cb20-103" aria-hidden="true" tabindex="-1"></a>Adding another column that sums the amount of internships:</span>
 <span id="cb20-104"><a href="#cb20-104" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-107"><a href="#cb20-107" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb20-108"><a href="#cb20-108" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>num_internships <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(new_df[, <span class="fu">c</span>(<span class="st">&quot;internships_one&quot;</span>, <span class="st">&quot;internships_two&quot;</span>, <span class="st">&quot;internships_three&quot;</span>, <span class="st">&quot;internships_four&quot;</span>)])</span>
-<span id="cb20-109"><a href="#cb20-109" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df)</span>
+<span id="cb20-109"><a href="#cb20-109" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_df, <span class="dv">3</span>)</span>
 <span id="cb20-110"><a href="#cb20-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-111"><a href="#cb20-111" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-112"><a href="#cb20-112" aria-hidden="true" tabindex="-1"></a>Creating a subset of the data to get rid of the unnecessary columns:</span>
 <span id="cb20-113"><a href="#cb20-113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-116"><a href="#cb20-116" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb20-117"><a href="#cb20-117" aria-hidden="true" tabindex="-1"></a>final_df <span class="ot">&lt;-</span> <span class="fu">subset</span>(new_df, <span class="at">select =</span> <span class="fu">c</span>(survey_offers, survey_plans, survey_salary, fulltimejob, num_internships))</span>
-<span id="cb20-118"><a href="#cb20-118" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(final_df)</span>
+<span id="cb20-118"><a href="#cb20-118" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(final_df, <span class="dv">3</span>)</span>
 <span id="cb20-119"><a href="#cb20-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>

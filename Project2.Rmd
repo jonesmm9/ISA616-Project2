@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 df <- readRDS('FSB_BI_Survey_2019_2021.rds')
-head(df)
+head(df, 3)
 ```
 
 ## Cleaning the Full-Time Placements
@@ -43,7 +43,7 @@ head(df)
 ```{r}
 new_df <- subset(df, select = c(32:38))
 new_df$survey_salary = df$survey_salary
-head(new_df)
+head(new_df, 3)
 str(new_df)
 ```
 
@@ -57,7 +57,7 @@ new_df$survey_plans = as.factor(new_df$survey_plans)
 
 ```{r}
 new_df <- new_df[!is.na(new_df$survey_plans), ]
-head(new_df)
+head(new_df, 3)
 str(new_df$survey_plans)
 ```
 
@@ -65,7 +65,7 @@ str(new_df$survey_plans)
 
 ```{r}
 new_df$fulltimejob <- ifelse((new_df$survey_offers >= 1 & !is.na(new_df$survey_offers) ) | new_df$survey_plans == "accepted fulltime job", 1, 0)
-head(new_df, 10)
+head(new_df, 3)
 ```
 
 **Rationale for the "fulltimejob" column:**
@@ -85,19 +85,19 @@ new_df$internships_one <- ifelse(!is.na(new_df$survey_internone), 1, 0)
 new_df$internships_two <- ifelse(!is.na(new_df$survey_interntwo), 1, 0)
 new_df$internships_three <- ifelse(!is.na(new_df$survey_internthree), 1, 0)
 new_df$internships_four <- ifelse(!is.na(new_df$survey_internfour), 1, 0)
-head(new_df)
+head(new_df, 3)
 ```
 
 Adding another column that sums the amount of internships:
 
 ```{r}
 new_df$num_internships <- rowSums(new_df[, c("internships_one", "internships_two", "internships_three", "internships_four")])
-head(new_df)
+head(new_df, 3)
 ```
 
 Creating a subset of the data to get rid of the unnecessary columns:
 
 ```{r}
 final_df <- subset(new_df, select = c(survey_offers, survey_plans, survey_salary, fulltimejob, num_internships))
-head(final_df)
+head(final_df, 3)
 ```
