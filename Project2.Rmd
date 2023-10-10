@@ -15,7 +15,9 @@ format:
 
 # **Description**
 
-## Audience
+## Audience and Purpose
+
+Our audience is Kirk Bogard who is the Associate Vice President for Development & External Relations at FSB. We are developing this analysis so that he is able to inform FSB Career Services of how internships impact student's ability to place in full-time positions. This analysis will be useful when FSB is attempting to attract companies who look to hire interns. FSB can also inform students of the value of internships
 
 ## BVP
 
