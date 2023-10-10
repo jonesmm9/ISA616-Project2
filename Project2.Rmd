@@ -13,20 +13,21 @@ format:
     self-contained: true
 ---
 
-description of audience, BVP, description of data
+# **Description**
+
+## Audience
+
+## BVP
+
+![](images/BVP Student Success.png)
+
+## Data
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Test Change
-Dr. Farmer is testing a change in this file to see if we can run the document without changing the working directory.
-
-I'm adding another change
-
-Brady's change
-
-Maddie's Change
+# **Data Cleaning**
 
 ## Inserting Data
 
@@ -35,12 +36,10 @@ df <- readRDS('FSB_BI_Survey_2019_2021.rds')
 head(df)
 ```
 
-
-## Creating a Clean Subset
-
-### Cleaning the Full-Time Placements
+## Cleaning the Full-Time Placements
 
 **Omitting colummns that are not helpful to data insights charge number #3 (internships to full time placements)**
+
 ```{r}
 new_df <- subset(df, select = c(32:38))
 new_df$survey_salary = df$survey_salary
@@ -49,11 +48,13 @@ str(new_df)
 ```
 
 **Turning survey_plans column into a factored column**
+
 ```{r}
 new_df$survey_plans = as.factor(new_df$survey_plans)
 ```
 
 **Omitting all null values for survey_plans:**
+
 ```{r}
 new_df <- new_df[!is.na(new_df$survey_plans), ]
 head(new_df)
@@ -61,6 +62,7 @@ str(new_df$survey_plans)
 ```
 
 **Making a column that has a "1" if the candidate has accepted a fulltime job OR they have at least 1 offer, otherwise "0":**
+
 ```{r}
 new_df$fulltimejob <- ifelse((new_df$survey_offers >= 1 & !is.na(new_df$survey_offers) ) | new_df$survey_plans == "accepted fulltime job", 1, 0)
 head(new_df, 10)
@@ -68,18 +70,16 @@ head(new_df, 10)
 
 **Rationale for the "fulltimejob" column:**
 
-We wanted to count full-time job placement as anyone who has done one of the following:
-* said that they "accepted a fulltime job" as their survey plan
-* put that they got at least 1 offer in their survey
+We wanted to count full-time job placement as anyone who has done one of the following: \* said that they "accepted a fulltime job" as their survey plan \* put that they got at least 1 offer in their survey
 
-We decided to add the second criteria bullet to full-time job placements because even if someone is, for example, "continuing their education" in the future, if they got at least 1 offer, they could have had a full time job. Since we are solely looking at full-time job placements, we wanted to look at everyone who has a full-time job or could've chosen to take a full-time job if they had at least one offer. 
+We decided to add the second criteria bullet to full-time job placements because even if someone is, for example, "continuing their education" in the future, if they got at least 1 offer, they could have had a full time job. Since we are solely looking at full-time job placements, we wanted to look at everyone who has a full-time job or could've chosen to take a full-time job if they had at least one offer.
 
+## Cleaning the Internship Placements
 
-### Cleaning the Internship Placements
-
-We want to easily see how many internships each candidate has. 
+We want to easily see how many internships each candidate has.
 
 Making four different columns that show "1" if the candidate has one, two, three, or four internships:
+
 ```{r}
 new_df$internships_one <- ifelse(!is.na(new_df$survey_internone), 1, 0)
 new_df$internships_two <- ifelse(!is.na(new_df$survey_interntwo), 1, 0)
@@ -89,15 +89,15 @@ head(new_df)
 ```
 
 Adding another column that sums the amount of internships:
+
 ```{r}
 new_df$num_internships <- rowSums(new_df[, c("internships_one", "internships_two", "internships_three", "internships_four")])
 head(new_df)
 ```
 
 Creating a subset of the data to get rid of the unnecessary columns:
+
 ```{r}
 final_df <- subset(new_df, select = c(survey_offers, survey_plans, survey_salary, fulltimejob, num_internships))
 head(final_df)
 ```
-
-
