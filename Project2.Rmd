@@ -13,6 +13,8 @@ format:
     self-contained: true
 ---
 
+description of audience, BVP, description of data
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -88,7 +90,14 @@ head(new_df)
 
 Adding another column that sums the amount of internships:
 ```{r}
+new_df$num_internships <- rowSums(new_df[, c("internships_one", "internships_two", "internships_three", "internships_four")])
+head(new_df)
+```
 
+Creating a subset of the data to get rid of the unnecessary columns:
+```{r}
+final_df <- subset(new_df, select = c(survey_offers, survey_plans, survey_salary, fulltimejob, num_internships))
+head(final_df)
 ```
 
 
