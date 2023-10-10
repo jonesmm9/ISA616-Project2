@@ -13,10 +13,6 @@ format:
     self-contained: true
 ---
 
-# **Computing Environment**
-
-
-
 # **Description**
 
 ## Audience and Purpose
@@ -101,3 +97,9 @@ head(final_df)
 ```
 
 The final_df dataset is what we are going to use to run our analysis on for Data Insight #3
+
+# **Computing Environment**
+```{r}
+sessionInfo()
+```
+
