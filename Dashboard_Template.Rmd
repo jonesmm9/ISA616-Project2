@@ -22,7 +22,7 @@ pacman::p_load(tidyverse, #for data manipulation
 
 ```
 
-# Survey Overview {data-orientation=columns}
+# Question and Insights {data-orientation=columns}
 
 ### Question
 
