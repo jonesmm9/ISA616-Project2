@@ -24,6 +24,22 @@ pacman::p_load(tidyverse, #for data manipulation
 
 # Survey Overview {data-orientation=columns}
 
+### Question
+
+Using the FSB Student Survey, we are looking to answer these three questions:
+
+1. If you have at least one internship, how much more likely are you to have a full-time job than if you did not have an internship?
+
+2. What if you have two internships?
+
+3. Does having an internship mean your salary level will be higher in your full-time job?
+
+### Insights
+
+
+
+# Survey Overview {data-orientation=columns}
+
 Overview of survey responses
   
 ## row {data-width=300}
@@ -40,23 +56,21 @@ Overview of survey responses
 
 ```   
  
-### Class Rank
-    
-```{r,echo=FALSE}
-
-```
-
 
 ## row {data-height=600}
 
 ### Internship Breakdown
 
+This graph will be the number of internships on the x axis with the number of responses on the y axis.
+
 ```{r,echo=FALSE}
 
 ```
 
 
-### Responses by Primary Major
+### Post-Graduation Plans
+
+Survey plans on the x-axis to the number of responses on the y axis. 
     
 ```{r,echo=FALSE}
 
@@ -64,17 +78,21 @@ Overview of survey responses
    
    
 
-# Internships by Majors {data-orientation=columns}
+# Internships to Full-Time Jobs {data-orientation=columns}
 
 ## Column {data-width=400}
 
-### Internship Status by Major
+### Percentage of Full-Time Placement between 1 and 2 Internships
+
+This graph is going to look at the full-time job placement difference between students that had one internship vs. students that had two internships (question 3b).
 
 ```{r,echo=FALSE}
 
 ```
 
-### Internship Status by Career Fair Attendance
+### Internship to Salary Impact
+
+We will do mean imputation for the N/A salary values by major to fill in the data that is missing. This graph will answer question 3c to see if there is a difference in salary if a student has an internship or not. 
 
 ```{r,echo=FALSE}
 
@@ -83,28 +101,11 @@ Overview of survey responses
 
 ## Column {data-width=600}
 
-### Internship Status by Career Fair Attendance-All Majors
+### Number of Internships to Full-Time
+
+This graph will look similar to 'Internship Status by Career Fair Attendance' on the in-class example. We will have internship number on the x axis, response amount on the y axis, and color it by fulltime job or no fulltime job (question 3a). 
 
 ```{r,echo=FALSE}
-
-```
-
-
-# Firms that Hire Interns {data-orientation=columns}
-
-## Column {data-width=500}
-
-### Employers Hiring Paid Interns by Major
-
-```{r,echo=FALSE}
-
-```
-
-## Column {data-width=500}
-
-### Add Another Chart Here
-
-```{r}
 
 ```
 
