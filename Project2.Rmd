@@ -47,7 +47,7 @@ df <- readRDS('FSB_BI_Survey_2019_2021.rds')
 
 
 ```{r}
-new_df <- subset(df, select = c(32:38))
+new_df <- subset(df, select = c(2, 32:38))
 new_df$survey_salary = df$survey_salary
 head(new_df)
 ```
@@ -92,7 +92,7 @@ unique(new_df$survey_internships)
 **Creating a subset of the data to get rid of the unnecessary columns:**
 
 ```{r}
-final_df <- subset(new_df, select = c(survey_offers, survey_plans, survey_salary, fulltimejob, survey_internships))
+final_df <- subset(new_df, select = c(survey_offers, survey_plans, survey_salary, fulltimejob, survey_internships, major1))
 head(final_df)
 ```
 
@@ -101,5 +101,9 @@ The final_df dataset is what we are going to use to run our analysis on for Data
 # **Computing Environment**
 ```{r}
 sessionInfo()
+```
+
+```{r}
+write.csv(final_df, "final_df.csv", row.names = FALSE)
 ```
 

@@ -35,6 +35,13 @@ Using the FSB Student Survey, we are looking to answer these three questions:
 
 ### Insights
 
+After analyzing our data, we found answers to each of the three questions above. 
+
+1. Looking at the tab titled "Internships to Full-Time Job", the graph of "Percentage of Students with Full-Time Jobs by Number of Internships" shows that 57.9% of students who had 0 internships got full-time jobs post graduation, while 83.04% of students who had 1 internship got a full-time job. We can also see that students with 2, 3, 4, and 5 internships all had full-time job percentages much higher than students with 0 internships. This shows that having at least one internship in college significantly impacts full-time job placement post graduation. 
+
+2. Looking at the tab titled "Internships to Full-Time Job", the graph of "Percentage of Students with Full-Time Jobs by Number of Internships" shows that 83.04% of people who had 1 internship got a full-time job post graduation, while 89.31% of students with 2 internships got a full-time job post graduation. There is a ~6% higher chance of getting a full-time job post graduation if a student had 2 internships. 
+
+3. Looking at the tab titled "Internships to Full-Time Job", the graph of "Internship to Salary Impact", we can see that there is a ~$3,000 difference in starting salary between students who had one internship vs. students who had zero internships. 
 
 
 # Survey Overview {data-orientation=columns}
@@ -92,25 +99,21 @@ ggplotly(p)
 
 ## Column {data-width=400}
 
-### Percentage of Full-Time Placement between 1 and 2 Internships
-
-WE NEED TO CHANGE THIS TO BE PERCENTAGE OF PEOPLE WITH 1 INTERNSHIP GOT A FULLTIME JOB VS. PERCENTAGE OF PEOPLE WITH 2 INTERNSHIPS GOT A FULLTIME JOB
+### Number of Internships to Full-Time
 
 ```{r,echo=FALSE}
-internships_1_2 <- subset(final_df, survey_internships == 1 | survey_internships == 2)
-internships_1_2$fulltimejob <- ifelse(internships_1_2$fulltimejob == 1, "yes", "no")
-internships_1_2$fulltimejob <- as.factor(internships_1_2$fulltimejob)
+final_df$fulltimejob_yes <- ifelse(final_df$fulltimejob == 1, "yes", "no")
+final_df$fulltimejob_yes <- as.factor(final_df$fulltimejob_yes)
 
-p4 <- internships_1_2 %>%
-  mutate(survey_internships = factor(survey_internships, levels = c("1", "2"))) %>%
-  ggplot(aes(x = survey_internships, fill = fulltimejob)) +
+p <- final_df %>%
+  ggplot(aes(x = survey_internships, fill = fulltimejob_yes)) +
   geom_bar(color = "steelblue") +
   xlab("Amount of Internships") +
   ylab("Number of Responses") +
   theme_bw() +
   labs(fill = "Full-Time Job")
+ggplotly(p)
 
-ggplotly(p4)
 ```
 
 ### Internship to Salary Impact
@@ -145,19 +148,25 @@ ggplotly(p)
 
 ## Column {data-width=600}
 
-### Number of Internships to Full-Time
+### Percentage of Students with Full-Time Jobs by Number of Internships
 
 ```{r,echo=FALSE}
 final_df$fulltimejob_yes <- ifelse(final_df$fulltimejob == 1, "yes", "no")
 final_df$fulltimejob_yes <- as.factor(final_df$fulltimejob_yes)
 
-p <- final_df %>%
-  ggplot(aes(x = survey_internships, fill = fulltimejob_yes)) +
-  geom_bar(color = "steelblue") +
+percentage_data <- final_df %>%
+  group_by(survey_internships) %>%
+  summarize(percentage = sum(fulltimejob_yes == "yes") / n())
+
+p <- percentage_data %>%
+  ggplot(aes(x = survey_internships, y = percentage)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
   xlab("Amount of Internships") +
-  ylab("Number of Responses") +
+  ylab("Percentage of 'yes' responses") +
   theme_bw() +
-  labs(fill = "Full-Time Job")
+  labs(fill = "Full-Time Job") +
+  geom_text(aes(label = scales::percent(percentage)), vjust = -0.5)
+
 ggplotly(p)
 ```
 
