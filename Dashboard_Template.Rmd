@@ -21,34 +21,69 @@ pacman::p_load(tidyverse, #for data manipulation
 #read in data
 final_df <- read.csv('final_df.csv')
 ```
-# Question and Insights {data-orientation=columns}
 
-### Question
+# Question and Insights {data-orientation="columns"}
 
-Using the FSB Student Survey, we are looking to answer these three questions:
+## row {data-width="700"}
 
-1. If you have at least one internship, how much more likely are you to have a full-time job than if you did not have an internship?
+### Project Statement
 
-2. What if you have two internships?
+For this project, we wanted to better understand the importance of internships in college. Specifically, we used the FSB Student Survey from 2019-2021 to answer the following questions:
 
-3. Does having an internship mean your salary level will be higher in your full-time job?
+1.  If you have at least one internship, how much more likely are you to have a full-time job than if you did not have an internship?
+
+2.  What if you have two internships?
+
+3.  Does having an internship mean your salary level will be higher in your full-time job?
+
+Before diving into the data, we created a business value proposition (see below) to better understand our customer's pain points and the potential gain creators we can make. 
+
+### Business Value Proposition
+
+![](images/poster Value proposition canvas simple white (2).png)
+
+## row {data-height="600"}
 
 ### Insights
 
-After analyzing our data, we found answers to each of the three questions above: 
+After analyzing our data, we found answers to each of the three questions above:
 
-1. Looking at the tab titled "Internships to Full-Time Jobs", the graph of "Percentage of Students with Full-Time Jobs by Number of Internships" shows that 57.69% of students who had 0 internships got full-time jobs post graduation, while 83.04% of students who had 1 internship got a full-time job. We can also see that students with 2, 3, 4, and 5 internships all had full-time job percentages much higher than students with 0 internships. 
+1.  Looking at the tab titled "Internships to Full-Time Jobs", the graph of "Percentage of Students with Full-Time Jobs by Number of Internships" shows that 57.69% of students who had 0 internships got full-time jobs post graduation, while 83.04% of students who had 1 internship got a full-time job. We can also see that students with 2, 3, 4, and 5 internships all had full-time job percentages much higher than students with 0 internships.
 
-2. Looking at the tab titled "Internships to Full-Time Jobs", the graph of "Percentage of Students with Full-Time Jobs by Number of Internships" shows that 83.04% of people who had 1 internship got a full-time job post graduation, while 89.31% of students with 2 internships got a full-time job post graduation. 
+2.  Looking at the tab titled "Internships to Full-Time Jobs", the graph of "Percentage of Students with Full-Time Jobs by Number of Internships" shows that 83.04% of people who had 1 internship got a full-time job post graduation, while 89.31% of students with 2 internships got a full-time job post graduation.
 
-3. Looking at the tab titled "Internships to Full-Time Jobs", the graph of "Internship to Salary Impact" shows that there is a ~$5,000 difference in starting salary between students who had one internship vs. students who had zero internships. 
+3.  Looking at the tab titled "Internships to Full-Time Jobs", the graph of "Internship to Salary Impact" shows that there is a \~\$5,000 difference in starting salary between students who had one internship vs. students who had zero internships.
 
+# Description of Deliverables {data-orientation="rows"}
 
-# Survey Overview {data-orientation=columns}
+## row {data-width="500"}
+
+### Survey Overview Section
+In this tab of our analysis, we have included 4 different visualizations that we believe are important for our client. This section is intended to serve as an overview of the data and to give our client a brief, but easily understandable view of the student's responses. Below, I have explained each of the 4 visualizations in-depth:
+
+1. **Response Rate**: This is a graphic that shows the percentage of graduating students from 2019-2021 that responded to the FSB Internship & Full-Time Placement survey. It is important to see this percentage in order for the client to understand how many students' data we have to work with and that there might be missing student responses. 
+
+2. **Usable Responses**: This is the number of responses we have that is used in our analysis. It is important for the client to get this background before diving into the graphics so they have a better understanding of how many students' answers were taken into account in this analysis. 
+
+3. **Internship Breakdown**: This is a bar chart that shows the amount of students against the number of internships they had during their college career. This is a great breakdown to show the client so that they better understand any skew in the amount of college internships in FSB. They can also see how many students had no internships vs. 1+ internships in FSB during their college career. 
+
+4. **Post-Graduation Plans**: This is a bar chart that shows the amount of students against different post-graduation plans. It is important for our client to get an overview of where FSB students are going after graduation as this could help them understand what paths FSB students are interested in.
+
+### Internships to Full-Time Jobs Section
+
+The Internships to Full-Time section of our analysis contains deliverables that directly answer our original project questions. Below, we have developed descriptions of each deliverable:
+
+1. **Number of Internships to Full-Time**: 
+
+2. **Internship to Salary Impact**:
+
+3. **Percentage of Students with Full-Time Jobs by Number of Internships**: 
+
+# Survey Overview {data-orientation="columns"}
 
 Overview of survey responses
-  
-## row {data-width=500}
+
+## row {data-width="500"}
 
 ### Response Rate
 
@@ -73,8 +108,8 @@ gauge(rate,
 ```{r,echo=FALSE}
 nusable <- nrow(final_df)
 valueBox(nusable, icon = "fa-users")
-```   
- 
+```
+
 ### Internship Breakdown
 
 ```{r,echo=FALSE}
@@ -87,11 +122,10 @@ p <- ggplot(final_df, aes(x = survey_internships)) +
 ggplotly(p)
 ```
 
-
-## row {data-height=600}
+## row {data-height="600"}
 
 ### Post-Graduation Plans
-    
+
 ```{r,echo=FALSE}
 p <- final_df %>%
   ggplot(aes(x = reorder(survey_plans, survey_plans, function(x) -length(x)))) +
@@ -104,10 +138,9 @@ p <- final_df %>%
 ggplotly(p)
 ```
 
+# Internships to Full-Time Jobs {data-orientation="columns"}
 
-# Internships to Full-Time Jobs {data-orientation=columns}
-
-## Column {data-width=400}
+## Column {data-width="400"}
 
 ### Number of Internships to Full-Time
 
@@ -154,7 +187,7 @@ ggplotly(p)
 
 ```
 
-## Column {data-width=600}
+## Column {data-width="600"}
 
 ### Percentage of Students with Full-Time Jobs by Number of Internships
 
@@ -185,4 +218,3 @@ p <- percentage_data %>%
 ggplotly(p)
 
 ```
-
