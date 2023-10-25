@@ -22,7 +22,7 @@ pacman::p_load(tidyverse, #for data manipulation
 final_df <- read.csv('final_df.csv')
 ```
 
-# Question and Insights {data-orientation="columns"}
+# Project Overview {data-orientation="columns"}
 
 ## row {data-width="700"}
 
@@ -73,11 +73,11 @@ In this tab of our analysis, we have included 4 different visualizations that we
 
 The Internships to Full-Time section of our analysis contains deliverables that directly answer our original project questions. Below, we have developed descriptions of each deliverable:
 
-1. **Number of Internships to Full-Time**: 
+1. **Number of Internships to Full-Time**: This is an interactive bar chart that shows the number of internships (0-5) on the x-axis and number of responses of the y-axis with the fill of the graph being full-time job placement ("yes" or "no"). There are a lot of insights to be driven from this graph. This graph is important to show a visual representation of the amount of students who landed full-time jobs vs. those who didn't in each internship amount category. 
 
-2. **Internship to Salary Impact**:
+2. **Internship to Salary Impact**: This is a bar chart that shows the average full-time job salary of students who had 0 internships in college and students who had at least 1 internship in college. This is important for the client when trying to answer question #3 on the "Project Overview" tab asking if a student's salary will be higher if they had internships in college vs. those who did not.
 
-3. **Percentage of Students with Full-Time Jobs by Number of Internships**: 
+3. **Percentage of Students with Full-Time Jobs by Number of Internships**: This is a bar chart that shows the percentage of students who landed full-time jobs in each internship amount category. This graph directly answers questions 1 and 2 from the "Project Overview" tab asking about the likelihood of a student landing a full-time job if they had internships in college vs. no internship. 
 
 # Survey Overview {data-orientation="columns"}
 
