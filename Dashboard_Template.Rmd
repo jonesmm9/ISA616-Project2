@@ -59,25 +59,25 @@ After analyzing our data, we found answers to each of the three questions above:
 ## row {data-width="500"}
 
 ### Survey Overview Section
-In this tab of our analysis, we have included 4 different visualizations that we believe are important for our client. This section is intended to serve as an overview of the data and to give our client a brief, but easily understandable view of the student's responses. Below, I have explained each of the 4 visualizations in-depth:
+In this tab of our analysis, we have included 4 different visualizations that we believe are important for our client. This section is intended to serve as an overview of the data and to give our client a brief, but easily understandable view of the student's responses. Below, we have explained each of the 4 visualizations in-depth:
 
-1. **Response Rate**: This is a graphic that shows the percentage of graduating students from 2019-2021 that responded to the FSB Internship & Full-Time Placement survey. It is important to see this percentage in order for the client to understand how many students' data we have to work with and that there might be missing student responses. 
+1. **Response Rate**: This is a graphic that shows the percentage of graduating students from 2019-2021 that responded to the FSB Internship & Full-Time Placement survey. It is important to see this percentage in order for the client to understand what percentage of students responded to the survey and that there might be missing  responses. 
 
-2. **Usable Responses**: This is the number of responses we have that is used in our analysis. It is important for the client to get this background before diving into the graphics so they have a better understanding of how many students' answers were taken into account in this analysis. 
+2. **Usable Responses**: This is the number of responses we had available to use in our analysis. It is important for the client to get this background before diving into the graphics so they have a better understanding of how many students' answers were taken into account in this analysis. 
 
-3. **Internship Breakdown**: This is a bar chart that shows the amount of students against the number of internships they had during their college career. This is a great breakdown to show the client so that they better understand any skew in the amount of college internships in FSB. They can also see how many students had no internships vs. 1+ internships in FSB during their college career. 
+3. **Internship Breakdown**: This is a bar chart that shows the amount of students compared with the number of internships they had during their college career. This is a great breakdown to show the client so they better understand any skew in the amount of internships had by students in FSB. They can also see how many students had no internships vs. 1+ internships in FSB during their college career. 
 
-4. **Post-Graduation Plans**: This is a bar chart that shows the amount of students against different post-graduation plans. It is important for our client to get an overview of where FSB students are going after graduation as this could help them understand what paths FSB students are interested in.
+4. **Post-Graduation Plans**: This is a bar chart that shows different post-graduation plans the number of students pursing each option. It is important for our client to get an overview of what FSB students are doing after graduation as this could help them understand what paths FSB students may be interested in in the future.
 
 ### Internships to Full-Time Jobs Section
 
 The Internships to Full-Time section of our analysis contains deliverables that directly answer our original project questions. Below, we have developed descriptions of each deliverable:
 
-1. **Number of Internships to Full-Time**: This is an interactive bar chart that shows the number of internships (0-5) on the x-axis and number of responses of the y-axis with the fill of the graph being full-time job placement ("yes" or "no"). There are a lot of insights to be driven from this graph. This graph is important to show a visual representation of the amount of students who landed full-time jobs vs. those who didn't in each internship amount category. 
+1. **Number of Internships to Full-Time**: This is an interactive bar chart that shows the number of internships (0-5) on the x-axis and number of responses on the y-axis with the fill of the graph being full-time job placement ("yes" or "no"). There are a lot of insights to be derived from this graph. This graph is important to show a visual representation of the amount of students who landed full-time jobs vs. those who did not in each internship amount category. 
 
-2. **Internship to Salary Impact**: This is a bar chart that shows the average full-time job salary of students who had 0 internships in college and students who had at least 1 internship in college. This is important for the client when trying to answer question #3 on the "Project Overview" tab asking if a student's salary will be higher if they had internships in college vs. those who did not.
+2. **Internship to Salary Impact**: This is a bar chart that shows the average full-time job salary of students who had 0 internships in college and students who had at least 1 internship in college. This is important for the client when trying to answer question #3 on the "Project Overview" tab asking if a student's salary will be higher if they had internships in college vs. if they did not.
 
-3. **Percentage of Students with Full-Time Jobs by Number of Internships**: This is a bar chart that shows the percentage of students who landed full-time jobs in each internship amount category. This graph directly answers questions 1 and 2 from the "Project Overview" tab asking about the likelihood of a student landing a full-time job if they had internships in college vs. no internship. 
+3. **Percentage of Students with Full-Time Jobs by Number of Internships**: This is a bar chart that shows the percentage of students who landed full-time jobs in each internship amount category. This graph directly answers questions 1 and 2 from the "Project Overview" tab asking about the likelihood of a student landing a full-time job if they had internships in college vs. not having an internship. 
 
 # Survey Overview {data-orientation="columns"}
 
