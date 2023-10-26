@@ -9,7 +9,7 @@ For our project we will specifically be focusing on the correlation between inte
 ## Files in our Project
 
 1.	.gitignore: a git file that ignores our data files when uploading to GitHub. This keeps our data privately on our computers as opposed to being publicly accessible
-2.	Final_Dashboard: Our Rmd and html file containing our final dashboard along with our project statements, questions, and our final graphs and tables
+2.	Dashboard_Template: Our Rmd and html file containing our final dashboard along with our project statements, questions, and our final graphs and tables
 3.	final_df.csv: our cleaned dataset in a CSV format
 4.	FSB_BI_Survey_2019_2021.rds: The original data file we were provided
 5.	Project2: Our Rmd and html containing how we cleaned our data for use in our Dashboard
