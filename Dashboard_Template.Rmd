@@ -52,7 +52,7 @@ After analyzing our data, we found answers to each of the three questions above:
 
 2.  Looking at the tab titled "Internships to Full-Time Jobs", the graph of "Percentage of Students with Full-Time Jobs by Number of Internships" shows that 83.04% of people who had 1 internship got a full-time job post graduation, while 89.31% of students with 2 internships got a full-time job post graduation.
 
-3.  Looking at the tab titled "Internships to Full-Time Jobs", the graph of "Internship to Salary Impact" shows that there is a \~\$5,000 difference in starting salary between students who had one internship vs. students who had zero internships.
+3.  Looking at the tab titled "Internships to Full-Time Jobs", the graph of "Average Salaries by Internships" shows that there is a \~\$5,000 difference in starting salary between students who had one internship vs. students who had zero internships.
 
 # Description of Deliverables {data-orientation="rows"}
 
@@ -75,7 +75,7 @@ The Internships to Full-Time section of our analysis contains deliverables that 
 
 1. **Number of Internships to Full-Time**: This is an interactive bar chart that shows the number of internships (0-5) on the x-axis and number of responses on the y-axis with the fill of the graph being full-time job placement ("yes" or "no"). There are a lot of insights to be derived from this graph. This graph is important to show a visual representation of the amount of students who landed full-time jobs vs. those who did not in each internship amount category. 
 
-2. **Internship to Salary Impact**: This is a bar chart that shows the average full-time job salary of students who had 0 internships in college and students who had at least 1 internship in college. This is important for the client when trying to answer question #3 on the "Project Overview" tab asking if a student's salary will be higher if they had internships in college vs. if they did not.
+2. **Average Salaries by Internships**: This is a bar chart that shows the average full-time job salary of students who had 0 internships in college and students who had at least 1 internship in college. This is important for the client when trying to answer question #3 on the "Project Overview" tab asking if a student's salary will be higher if they had internships in college vs. if they did not.
 
 3. **Percentage of Students with Full-Time Jobs by Number of Internships**: This is a bar chart that shows the percentage of students who landed full-time jobs in each internship amount category. This graph directly answers questions 1 and 2 from the "Project Overview" tab asking about the likelihood of a student landing a full-time job if they had internships in college vs. not having an internship. 
 
@@ -160,7 +160,7 @@ ggplotly(p)
 
 ```
 
-### Internship to Salary Impact
+### Average Salaries by Internships
 
 ```{r,echo=FALSE}
 final_df <- final_df %>%
