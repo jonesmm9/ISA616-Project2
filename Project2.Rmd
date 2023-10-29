@@ -26,7 +26,7 @@ Our audience is Kirk Bogard who is the Associate Vice President for Development 
 
 ## Data Description
 
-This dataset has three years of data representing FSB graduates from years 2019 to 2021. The dataset currently has 42 variables from a survey that FSB graduates took in those years. There is currently a lot of information in this dataset, some of which is not needed to analyze Data Insight #3, internships to full-time placement. We want to clean the dataset to make our analysis of internships to full-time placement a bit easier.
+This dataset has three years of data representing FSB graduates from 2019 to 2021. The dataset currently has 42 variables from a survey that FSB graduates took in those years. There is currently a lot of information in this dataset, some of which is not needed to analyze Data Insight #3, internships to full-time placement. We want to clean the dataset to make our analysis of internships to full-time placement a bit easier.
 
 
 ```{r setup, include=FALSE}
